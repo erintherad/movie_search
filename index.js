@@ -101,7 +101,7 @@ $(document).ready(function() {
   function generateListResults(object, listElement) {
     var results = object.results;
     $.each(results, function(key, value) {
-      var result = "<li class='list-group-item' id='" + value.id + "''><a href='#' data-toggle='modal' data-target='#detailModal'>" + value.title + "</a></li>";
+      var result = "<li class='list-group-item col-md-3' id='" + value.id + "''><a href='#' data-toggle='modal' data-target='#detailModal'>" + value.title + "</a></li>";
       listElement.append(result);
     });
   }
