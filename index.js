@@ -50,7 +50,7 @@ $(document).ready(function() {
   function generateResults(object, listElement) {
     var results = object.results;
     $.each(results, function(key, value) {
-      var result = "<li id='"+ key + "''><a href='#'>" + value.title + "</a></li>";
+      var result = "<li class='list-group-item' id='"+ key + "''><a href='#'>" + value.title + "</a></li>";
       listElement.append(result);
     });
   }

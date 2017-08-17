@@ -2,25 +2,41 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Move Search App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div class="container-fluid">
-      <form class="" action="index.html" method="post">
-        <input type="text" name="" value="" id="movie">
-        <button type="button" id="button" name="button">Search</button>
-      </form>
-      <br>
       <div class="row">
-        <h2>Most popular titles</h2>
-          <ul id="popular-results"></ul>
+        <div class="col-md-8 col-centered text-center">
+          <h2>Search for a movie</h2>
+          <form class="form-group" id="movieSearchForm" action="index.html" method="post">
+            <input type="text" name="" value="" id="movie" class="form-control">
+            <br>
+            <button type="button" id="searchButton" name="button" class="btn btn-primary">Search</button>
+          </form>
+        </div>
       </div>
       <div class="row">
-        <h2>Results</h2>
-        <ul id="search-results"></ul>
+        <div class="col-md-8 col-centered">
+          <h2 class="text-center">Most popular titles</h2>
+          <br>
+          <ul class="list-group" id="popular-results"></ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 col-centered">
+          <h2 class="text-center">Results</h2>
+          <br>
+          <ul class="list-group" id="search-results"></ul>
+        </div>
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
