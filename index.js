@@ -5,10 +5,13 @@ $(document).ready(function() {
   input,
   movieName,
   key = 'api_key=5b19221d20b929615d236692cea743e4',
-  lang = '&language=en-US&page=1';
+  lang = '&language=en-US&page=1',
+  searchDiv = $('#searchDiv'),
+  popularDiv = $('#popularDiv');
 
   // Shows popular movies on page load
   getPopular();
+  searchDiv.hide();
 
   // Submit event to show search results
   $('#searchButton').click(function(e) {
@@ -22,6 +25,8 @@ $(document).ready(function() {
       success: function(data) {
         console.log(data);
         generateResults(data, $('#search-results'));
+        popularDiv.hide();
+        searchDiv.show();
       },
       error: function(e) {
         console.log(e.message);
