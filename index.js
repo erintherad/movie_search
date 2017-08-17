@@ -74,17 +74,25 @@ $(document).ready(function() {
 
   // Function that builds movie details
   function generateMovieDetails(data) {
-    console.log('function called')
-    var result = data.title;
-    console.log(data.title);
-    $('#movieDetail').append(result);
+    var dateArr = data.release_date.split('-');
+    var dateStr = "Released on " + getMonthName(dateArr[1]) + " " + dateArr[2] + ", " + dateArr[0];
+    var title = "<h2>" + data.title + "</h2>";
+    var description = "<p>" + data.overview + "</p>" +
+                      "<p>" + dateStr + "</p>";
+    $('#movieTitle').append(title);
+    $('#movieDetail').append(description);
+  }
+
+  function getMonthName(monthNumber) {
+    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    return months[monthNumber - 1];
   }
 
   // Reusable generate result function
   function generateListResults(object, listElement) {
     var results = object.results;
     $.each(results, function(key, value) {
-      var result = "<li class='list-group-item' id='"+ value.id + "''><a href='#' data-toggle='modal' data-target='#detailModal'>" + value.title + "</a></li>";
+      var result = "<li class='list-group-item' id='" + value.id + "''><a href='#' data-toggle='modal' data-target='#detailModal'>" + value.title + "</a></li>";
       listElement.append(result);
     });
   }
