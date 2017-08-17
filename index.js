@@ -18,6 +18,8 @@ $(document).ready(function() {
   searchDiv.hide();
   loading.hide();
 
+// *** EVENT LISTENERS *** //
+
   // Submit event to show search results
   $('#searchButton').click(function(e) {
     popularDiv.hide();
@@ -58,6 +60,9 @@ $(document).ready(function() {
     });
 });
 
+
+// *** HELPER FUNCTIONS *** //
+
   // A function that GETs 20 of the most popular movies
   function getPopular() {
     $.ajax({
@@ -87,6 +92,7 @@ $(document).ready(function() {
     $('#movieDetail').append(description);
   }
 
+  // Function that checks for missing images and replaces with a placeholder
   function checkForMissingImage(imageVal) {
     if (imageVal != null) {
       return config.imageUrl + "/" + imageVal;
@@ -95,6 +101,7 @@ $(document).ready(function() {
     }
   }
 
+  // Function that grabs the name of a month based from a number
   function getMonthName(monthNumber) {
     var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     return months[monthNumber - 1];
