@@ -44,7 +44,7 @@ $(document).ready(function() {
   });
 
   // Click event to show movie details page
-  $(".list").on("click", ".list-group-item", function(event){
+  $(".list").on("click", ".card", function(event){
     $('#movieDetail, #movieTitle').empty();
     var movieId = this.id;
     $.ajax({
@@ -112,9 +112,10 @@ $(document).ready(function() {
     var results = object.results;
     $.each(results, function(key, value) {
       var image = checkForMissingImage(value.backdrop_path);
-      var result = "<li class='list-group-item col-md-3' id='" + value.id + "''>" +
+      var result = "<li class='card col-md-3' id='" + value.id + "''>" +
+                   "<a href='#' data-toggle='modal' data-target='#detailModal'>" +
                    "<img src='" + image + "' class='img-fluid'>" +
-                   "<a href='#' data-toggle='modal' data-target='#detailModal'>" + value.title + "</a></li>";
+                   "<h4 class='card-title'>" + value.title + "</h4></a></li>";
       listElement.append(result);
     });
   }
