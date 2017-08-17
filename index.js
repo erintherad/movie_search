@@ -7,14 +7,18 @@ $(document).ready(function() {
   key = 'api_key=5b19221d20b929615d236692cea743e4',
   lang = '&language=en-US&page=1',
   searchDiv = $('#searchDiv'),
-  popularDiv = $('#popularDiv');
+  popularDiv = $('#popularDiv'),
+  loading = $('#loading');
 
   // Shows popular movies on page load
   getPopular();
   searchDiv.hide();
+  loading.hide();
 
   // Submit event to show search results
   $('#searchButton').click(function(e) {
+    popularDiv.hide();
+    loading.show();
     $('#search-results').empty();
     var movieInput = $('#movie').val();
     movieName = encodeURI(movieInput);
@@ -24,8 +28,8 @@ $(document).ready(function() {
       dataType: 'json',
       success: function(data) {
         generateResults(data, $('#search-results'));
-        popularDiv.hide();
         searchDiv.show();
+        loading.hide();
       },
       error: function(e) {
         console.log(e.message);
