@@ -74,12 +74,19 @@ $(document).ready(function() {
     });
   }
 
+  // Function that generates images for detail modal
+  function generateImages(data) {
+
+  }
+
   // Function that builds movie details
   function generateMovieDetails(data) {
     var dateArr = data.release_date.split('-');
     var dateStr = "Released on " + getMonthName(dateArr[1]) + " " + dateArr[2] + ", " + dateArr[0];
+    var image = config.imageUrl + data.backdrop_path;
     var title = "<h2>" + data.title + "</h2>";
-    var description = "<p>" + data.overview + "</p>" +
+    var description = "<img src='" + image + "'>" +
+                      "<p>" + data.overview + "</p>" +
                       "<p>" + dateStr + "</p>";
     $('#movieTitle').append(title);
     $('#movieDetail').append(description);
