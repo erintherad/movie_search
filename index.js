@@ -2,7 +2,7 @@ $(document).ready(function() {
   var url = 'https://api.themoviedb.org/3/',
   search = 'search/movie?query=',
   popular = 'movie/popular?',
-  input,
+  movieInput,
   movieName,
   key = 'api_key=5b19221d20b929615d236692cea743e4',
   lang = '&language=en-US&page=1',
@@ -16,14 +16,13 @@ $(document).ready(function() {
   // Submit event to show search results
   $('#searchButton').click(function(e) {
     $('#search-results').empty();
-    var input = $('#movie').val();
-    movieName = encodeURI(input);
+    var movieInput = $('#movie').val();
+    movieName = encodeURI(movieInput);
     $.ajax({
       type: 'GET',
-      url: url + search + input + '&' + key + lang,
+      url: url + search + movieInput + '&' + key + lang,
       dataType: 'json',
       success: function(data) {
-        console.log(data);
         generateResults(data, $('#search-results'));
         popularDiv.hide();
         searchDiv.show();
@@ -32,6 +31,7 @@ $(document).ready(function() {
         console.log(e.message);
       }
     });
+    $('#movie').val('');
   });
 
   // A function that GETs 20 of the most popular movies
