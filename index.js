@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var url = 'https://api.themoviedb.org/3/',
-  mode = 'search/movie?query=',
+  search = 'search/movie?query=',
   popular = 'movie/popular?',
   input,
   movieName,
@@ -15,13 +15,13 @@ $(document).ready(function() {
     movieName = encodeURI(input);
     $.ajax({
       type: 'GET',
-      url: url + mode + input + key,
+      url: url + search + input + '&' + key + lang,
       async: false,
-      jsonpCallback: 'testing',
       contentType: 'application/json',
       dataType: 'jsonp',
-      success: function(json) {
-        console.log(json);
+      success: function(data) {
+        console.log(data);
+        generateResults(data, $('#search-results'));
       },
       error: function(e) {
         console.log(e.message);
