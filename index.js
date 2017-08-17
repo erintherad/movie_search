@@ -37,16 +37,19 @@ $(document).ready(function() {
       contentType: 'application/json',
       dataType: 'jsonp',
       success: function(data) {
-        var results = data.results;
-
-        for (result in results) {
-          var result = "<li>" + results[result].original_title + "</li>";
-          $('#popular-results').append(result);
-        }
+        generateResults(data, $('#popular-results'));
       },
       error: function(e) {
         console.log(e.message);
       }
+    });
+  }
+
+  function generateResults(object, listElement) {
+    var results = object.results;
+    $.each(results, function(key, value) {
+      var result = "<li id='"+ key + "''><a href='#'>" + value.title + "</a></li>";
+      listElement.append(result);
     });
   }
 })
