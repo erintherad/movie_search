@@ -11,15 +11,14 @@ $(document).ready(function() {
   getPopular();
 
   // Submit event to show search results
-  $('#searchButton').on('click', function() {
+  $('#searchButton').click(function(e) {
+    $('#search-results').empty();
     var input = $('#movie').val();
     movieName = encodeURI(input);
     $.ajax({
       type: 'GET',
       url: url + search + input + '&' + key + lang,
-      async: false,
-      contentType: 'application/json',
-      dataType: 'jsonp',
+      dataType: 'json',
       success: function(data) {
         console.log(data);
         generateResults(data, $('#search-results'));
