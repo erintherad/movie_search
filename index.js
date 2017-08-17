@@ -11,8 +11,8 @@ $(document).ready(function() {
   getPopular();
 
   // Submit event to show search results
-  $('button').click(function() {
-    var input = $('#movie').val(),
+  $('#searchButton').on('click', function() {
+    var input = $('#movie').val();
     movieName = encodeURI(input);
     $.ajax({
       type: 'GET',
