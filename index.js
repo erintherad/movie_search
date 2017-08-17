@@ -10,7 +10,7 @@ $(document).ready(function() {
   popularDiv = $('#popularDiv'),
   loading = $('#loading');
 
-  // Shows popular movies on page load
+  // Sets page with correct show/hide logic
   getPopular();
   searchDiv.hide();
   loading.hide();
