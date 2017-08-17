@@ -74,22 +74,25 @@ $(document).ready(function() {
     });
   }
 
-  // Function that generates images for detail modal
-  function generateImages(data) {
-
-  }
-
   // Function that builds movie details
   function generateMovieDetails(data) {
     var dateArr = data.release_date.split('-');
     var dateStr = "Released on " + getMonthName(dateArr[1]) + " " + dateArr[2] + ", " + dateArr[0];
-    var image = config.imageUrl + data.backdrop_path;
+    var image = checkForMissingImage(data.backdrop_path);
     var title = "<h2>" + data.title + "</h2>";
     var description = "<img src='" + image + "'>" +
                       "<p>" + data.overview + "</p>" +
                       "<p>" + dateStr + "</p>";
     $('#movieTitle').append(title);
     $('#movieDetail').append(description);
+  }
+
+  function checkForMissingImage(imageVal) {
+    if (imageVal != null) {
+      return config.imageUrl + "/" + imageVal;
+    } else {
+      return "/assets/missing.png"
+    }
   }
 
   function getMonthName(monthNumber) {
@@ -101,7 +104,10 @@ $(document).ready(function() {
   function generateListResults(object, listElement) {
     var results = object.results;
     $.each(results, function(key, value) {
-      var result = "<li class='list-group-item col-md-3' id='" + value.id + "''><a href='#' data-toggle='modal' data-target='#detailModal'>" + value.title + "</a></li>";
+      var image = checkForMissingImage(value.backdrop_path);
+      var result = "<li class='list-group-item col-md-3' id='" + value.id + "''>" +
+                   "<img src='" + image + "' class='img-fluid'>" +
+                   "<a href='#' data-toggle='modal' data-target='#detailModal'>" + value.title + "</a></li>";
       listElement.append(result);
     });
   }
