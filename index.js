@@ -1,15 +1,17 @@
 $(document).ready(function() {
-  var url = 'https://api.themoviedb.org/3',
-  search = '/search/movie?query=',
-  popular = '/movie/popular?',
-  movie = '/movie/',
-  movieInput,
-  movieName,
-  key = 'api_key=5b19221d20b929615d236692cea743e4',
-  lang = '&language=en-US&page=1',
-  searchDiv = $('#searchDiv'),
-  popularDiv = $('#popularDiv'),
-  loading = $('#loading');
+  var config = {
+    searchUrl: 'https://api.themoviedb.org/3/search/movie?query=',
+    popularUrl: 'https://api.themoviedb.org/3/movie/popular?api_key=5b19221d20b929615d236692cea743e4&language=en-US&page=1',
+    imageUrl: 'https://image.tmdb.org/t/p/w500',
+    movieUrl: 'https://api.themoviedb.org/3/movie/',
+    apiKey: 'api_key=5b19221d20b929615d236692cea743e4&language=en-US&page=1'
+  }
+
+  var searchDiv = $('#searchDiv'),
+      popularDiv = $('#popularDiv'),
+      loading = $('#loading'),
+      movieInput,
+      movieName;
 
   // Sets page with correct show/hide logic
   getPopular();
@@ -25,7 +27,7 @@ $(document).ready(function() {
     movieName = encodeURI(movieInput);
     $.ajax({
       type: 'GET',
-      url: url + search + movieInput + '&' + key + lang,
+      url: config.searchUrl + movieInput + '&' + config.apiKey,
       dataType: 'json',
       success: function(data) {
         generateListResults(data, $('#search-results'));
@@ -45,7 +47,7 @@ $(document).ready(function() {
     var movieId = this.id;
     $.ajax({
       type: 'GET',
-      url: url + movie + movieId + '?' + key + lang,
+      url: config.movieUrl + movieId + '?' + config.apiKey,
       dataType: 'json',
       success: function(data) {
         generateMovieDetails(data);
@@ -60,7 +62,7 @@ $(document).ready(function() {
   function getPopular() {
     $.ajax({
       type: 'GET',
-      url: url + popular + key + lang,
+      url: config.popularUrl,
       contentType: 'application/json',
       dataType: 'jsonp',
       success: function(data) {
