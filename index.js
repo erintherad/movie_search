@@ -1,8 +1,8 @@
 $(document).ready(function() {
-  var url = 'https://api.themoviedb.org/3/',
-  search = 'search/movie?query=',
-  popular = 'movie/popular?',
-  movie = 'movie/',
+  var url = 'https://api.themoviedb.org/3',
+  search = '/search/movie?query=',
+  popular = '/movie/popular?',
+  movie = '/movie/',
   movieInput,
   movieName,
   key = 'api_key=5b19221d20b929615d236692cea743e4',
@@ -41,7 +41,7 @@ $(document).ready(function() {
 
   // Click event to show movie details page
   $(".list").on("click", ".list-group-item", function(event){
-    $('#movieDetail').empty();
+    $('#movieDetail, #movieTitle').empty();
     var movieId = this.id;
     $.ajax({
       type: 'GET',
