@@ -40,7 +40,8 @@ $(document).ready(function() {
   });
 
   // Click event to show movie details page
-  $("#popularDiv").on("click", ".list-group-item", function(event){
+  $(".list").on("click", ".list-group-item", function(event){
+    $('#movieDetail').empty();
     var movieId = this.id;
     $.ajax({
       type: 'GET',
