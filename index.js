@@ -10,6 +10,7 @@ $(document).ready(function() {
   // Shows popular movies on page load
   getPopular();
 
+  // Submit event to show search results
   $('button').click(function() {
     var input = $('#movie').val(),
     movieName = encodeURI(input);
@@ -45,6 +46,7 @@ $(document).ready(function() {
     });
   }
 
+  // Reusable generate result function
   function generateResults(object, listElement) {
     var results = object.results;
     $.each(results, function(key, value) {
