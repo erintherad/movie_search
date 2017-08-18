@@ -1,13 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Yantramanav:300,700");
 body {
   margin: 0;
-  background-color: green; }
-
-.col-centered {
-  float: none;
-  margin: 0 auto; }
-
-ul {
-  -webkit-padding-start: 0px !important; }
-
-#loading {
-  width: 25%; }
+  background: #424242;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #424242 0%, #1d1d1d 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #424242 0%, #1d1d1d 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #424242 0%, #1d1d1d 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
+  body .header, body h4, body .search-div button {
+    font-family: "Open Sans Condensed", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+    padding: 20px 0px; }
+  body h4 {
+    font-family: "Yantramanav", sans-serif;
+    font-size: 1em;
+    padding: 20px 0px; }
+  body p {
+    font-family: "Yantramanav", sans-serif; }
+  body .col-centered {
+    float: none;
+    margin: 0 auto; }
+    body .col-centered ul {
+      -webkit-padding-start: 0px !important; }
+  body .search-div {
+    padding: 100px 0px; }
+    body .search-div input {
+      font-family: "Yantramanav", sans-serif; }
+  body .list {
+    padding-top: 40px;
+    padding-bottom: 100px; }
+  body .card {
+    background: none;
+    border: none;
+    padding-top: 10px; }

@@ -1,19 +1,68 @@
-$badass: green;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Yantramanav:300,700');
+
+$header: 'Open Sans Condensed', sans-serif;
+$body: 'Yantramanav', sans-serif;
 
 body {
+  // Sets background color on page
   margin: 0;
-  background-color: $badass;
-}
+  background: #424242; /* Old browsers */
+  background: -moz-linear-gradient(top, #424242 0%, #1d1d1d 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #424242 0%,#1d1d1d 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #424242 0%,#1d1d1d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
-.col-centered{
-  float: none;
-  margin: 0 auto;
-}
+  // Sets font styles on headers
+  .header {
+    font-family: $header;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+    padding: 20px 0px;
+  }
 
-ul {
-  -webkit-padding-start: 0px !important;
-}
+  h4 {
+    @extend .header;
+    font-family: $body;
+    font-size: 1em;
+    padding: 20px 0px;
+  }
 
-#loading {
-  width: 25%;
+  // Sets font styles on paragraphs
+  p {
+    font-family: $body;
+  }
+
+  // Center align columns
+  .col-centered{
+    float: none;
+    margin: 0 auto;
+
+    // Removes default left padding that was throwing off centering of els
+    ul {
+      -webkit-padding-start: 0px !important;
+    }
+  }
+
+  // Top Search area styles
+  .search-div {
+    padding: 100px 0px;
+    input {
+      font-family: $body;
+    }
+    button {
+      @extend .header
+    }
+  }
+
+  // Provide breathing space around list of results
+  .list {
+    padding-top: 40px;
+    padding-bottom: 100px;
+  }
+
+  .card {
+    background: none;
+    border: none;
+    padding-top: 10px;
+  }
 }
