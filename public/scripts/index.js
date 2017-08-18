@@ -24,8 +24,9 @@ $(document).ready(function() {
   $('#searchButton').click(function(e) {
     popularDiv.hide();
     loading.show();
-    $('#search-results').empty();
+    $('#search-results, #searchTerm').empty();
     var movieInput = $('#movie').val();
+    $('#searchTerm').append(movieInput);
     movieName = encodeURI(movieInput);
     $.ajax({
       type: 'GET',
