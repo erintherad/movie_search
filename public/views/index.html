@@ -12,14 +12,14 @@
       <div class="row">
         <div class="col-md-8 col-centered text-center search-div">
           <h2 class="header">Search for a movie</h2>
-          <input type="text" id="movie" class="form-control" placeholder="Star Wars, The Birds, Birdman...">
+          <input type="text" id="movie" class="form-control" placeholder="Star Wars, The Birds, Jurassic Park...">
           <br>
           <button id="searchButton" class="btn btn-warning">Search</button>
         </div>
       </div>
       <br>
-      <div class="row text-center">
-        <div class="col-md-12 text-center">
+      <div class="row">
+        <div class="col-md-12">
           <img src="/assets/loading.gif" alt="loading" class="img-fluid" id="loading">
         </div>
         <div class="col-md-10 list col-centered" id="popularDiv">
@@ -28,9 +28,11 @@
           <ul class="row" id="popular-results"></ul>
         </div>
         <div class="col-md-10 list col-centered" id="searchDiv">
-          <h2 class="header">Results for <span id="searchTerm"></span></h2>
-          <br>
-          <ul class="row" id="search-results"></ul>
+          <div class="clearfix">
+            <h2 class="header float-left">Results for <span id="searchTerm"></span></h2>
+            <p class="float-right"><a href=".">Back to popular titles</a></p>
+          </div>
+          <ul class="row text-center" id="search-results"></ul>
         </div>
       </div>
       <!-- Modal -->
