@@ -35,13 +35,22 @@ body {
   body .search-div {
     padding: 100px 0px; }
     body .search-div input {
-      font-family: "Yantramanav", sans-serif; }
+      font-family: "Yantramanav", sans-serif;
+      max-width: 800px;
+      margin: 0 auto; }
     body .search-div button {
       color: #b76b00; }
   body .list {
     padding-top: 40px;
     padding-bottom: 100px; }
+  body .popular-link {
+    padding-right: 5%; }
   body .card {
     background: none;
     border: none;
-    padding-top: 10px; }
+    padding-top: 10px;
+    max-width: 200px; }
+    body .card img {
+      height: 255px; }
+  body .movie-detail-img {
+    padding-right: 30px; }

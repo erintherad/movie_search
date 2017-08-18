@@ -2,7 +2,7 @@ $(document).ready(function() {
   var config = {
     searchUrl: 'https://api.themoviedb.org/3/search/movie?query=',
     popularUrl: 'https://api.themoviedb.org/3/movie/popular?api_key=5b19221d20b929615d236692cea743e4&language=en-US&page=1',
-    imageUrl: 'https://image.tmdb.org/t/p/w500',
+    imageUrl: 'https://image.tmdb.org/t/p/w185',
     movieUrl: 'https://api.themoviedb.org/3/movie/',
     apiKey: 'api_key=5b19221d20b929615d236692cea743e4&language=en-US&page=1'
   }
@@ -84,9 +84,9 @@ $(document).ready(function() {
   function generateMovieDetails(data) {
     var dateArr = data.release_date.split('-');
     var dateStr = "Released on " + getMonthName(dateArr[1]) + " " + dateArr[2] + ", " + dateArr[0];
-    var image = checkForMissingImage(data.backdrop_path);
+    var image = checkForMissingImage(data.poster_path);
     var title = "<h2>" + data.title + "</h2>";
-    var description = "<img src='" + image + "'>" +
+    var description = "<img class='float-left movie-detail-img' src='" + image + "'>" +
                       "<p>" + data.overview + "</p>" +
                       "<p>" + dateStr + "</p>";
     $('#movieTitle').append(title);
@@ -112,7 +112,7 @@ $(document).ready(function() {
   function generateListResults(object, listElement) {
     var results = object.results;
     $.each(results, function(key, value) {
-      var image = checkForMissingImage(value.backdrop_path);
+      var image = checkForMissingImage(value.poster_path);
       var result = "<li class='card col-md-3' id='" + value.id + "''>" +
                    "<a href='#' data-toggle='modal' data-target='#detailModal'>" +
                    "<img src='" + image + "' class='img-fluid'>" +
