@@ -1,0 +1,19 @@
+$badass: green;
+
+body {
+  margin: 0;
+  background-color: $badass;
+}
+
+.col-centered{
+  float: none;
+  margin: 0 auto;
+}
+
+ul {
+  -webkit-padding-start: 0px !important;
+}
+
+#loading {
+  width: 25%;
+}
