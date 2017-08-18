@@ -10,25 +10,25 @@
   <body>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-8 col-centered text-center">
-          <h2>Search for a movie</h2>
-          <input type="text" id="movie" class="form-control">
+        <div class="col-md-8 col-centered text-center search-div">
+          <h2 class="header">Search for a movie</h2>
+          <input type="text" id="movie" class="form-control" placeholder="Star Wars, The Birds, Birdman...">
           <br>
           <button id="searchButton" class="btn btn-primary">Search</button>
         </div>
       </div>
       <br>
-      <div class="row">
+      <div class="row text-center">
         <div class="col-md-12 text-center">
           <img src="/assets/loading.gif" alt="loading" class="img-fluid" id="loading">
         </div>
         <div class="col-md-10 list col-centered" id="popularDiv">
-          <h2 class="text-center">Most popular titles</h2>
+          <h2 class="header">Most popular titles</h2>
           <br>
           <ul class="row" id="popular-results"></ul>
         </div>
         <div class="col-md-10 list col-centered" id="searchDiv">
-          <h2 class="text-center">Results</h2>
+          <h2 class="header">Results</h2>
           <br>
           <ul class="row" id="search-results"></ul>
         </div>
@@ -38,7 +38,7 @@
         <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="movieTitle"></h5>
+              <h4 class="modal-title" id="movieTitle"></h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
