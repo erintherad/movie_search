@@ -9,16 +9,22 @@ body {
   /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, #424242 0%, #1d1d1d 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
-  body .header, body h4, body .search-div button {
+  body .header, body a .movie-title, body .search-div button {
     font-family: "Open Sans Condensed", sans-serif;
     font-weight: 700;
-    text-transform: uppercase;
-    color: white;
-    padding: 20px 0px; }
-  body h4 {
+    text-transform: uppercase; }
+  body h2 {
+    color: #EC971F; }
+  body a .movie-title {
     font-family: "Yantramanav", sans-serif;
     font-size: 1em;
-    padding: 20px 0px; }
+    padding: 20px 0px;
+    color: #EC971F; }
+    body a .movie-title:hover {
+      color: white !important; }
+  body a:hover, body a:focus, body a:active, body a:visited {
+    text-decoration: none !important;
+    outline: none; }
   body p {
     font-family: "Yantramanav", sans-serif; }
   body .col-centered {
@@ -30,6 +36,8 @@ body {
     padding: 100px 0px; }
     body .search-div input {
       font-family: "Yantramanav", sans-serif; }
+    body .search-div button {
+      color: #b76b00; }
   body .list {
     padding-top: 40px;
     padding-bottom: 100px; }

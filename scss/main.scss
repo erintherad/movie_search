@@ -2,6 +2,8 @@
 
 $header: 'Open Sans Condensed', sans-serif;
 $body: 'Yantramanav', sans-serif;
+$orange: #EC971F;
+$dark-orange: #b76b00;
 
 body {
   // Sets background color on page
@@ -16,15 +18,27 @@ body {
     font-family: $header;
     font-weight: 700;
     text-transform: uppercase;
-    color: white;
-    padding: 20px 0px;
   }
 
-  h4 {
-    @extend .header;
-    font-family: $body;
-    font-size: 1em;
-    padding: 20px 0px;
+  h2 {
+    color: $orange;
+  }
+
+  a {
+    .movie-title {
+      @extend .header;
+      font-family: $body;
+      font-size: 1em;
+      padding: 20px 0px;
+      color: $orange;
+      &:hover {
+        color: white !important;
+      }
+    }
+    &:hover, &:focus, &:active, &:visited {
+      text-decoration: none !important;
+      outline: none;
+    }
   }
 
   // Sets font styles on paragraphs
@@ -50,7 +64,8 @@ body {
       font-family: $body;
     }
     button {
-      @extend .header
+      @extend .header;
+      color: $dark-orange;
     }
   }
 

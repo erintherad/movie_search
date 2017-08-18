@@ -115,7 +115,7 @@ $(document).ready(function() {
       var result = "<li class='card col-md-3' id='" + value.id + "''>" +
                    "<a href='#' data-toggle='modal' data-target='#detailModal'>" +
                    "<img src='" + image + "' class='img-fluid'>" +
-                   "<h4 class='card-title'>" + value.title + "</h4></a></li>";
+                   "<h4 class='card-title movie-title'>" + value.title + "</h4></a></li>";
       listElement.append(result);
     });
   }
