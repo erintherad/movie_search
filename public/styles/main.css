@@ -1,15 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Yantramanav:300,700");
 body {
   margin: 0;
-  background: #424242;
+  background: #45484d;
   /* Old browsers */
-  background: -moz-linear-gradient(top, #424242 0%, #1d1d1d 100%);
+  background: -moz-radial-gradient(center, ellipse cover, #45484d 0%, #000000 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #424242 0%, #1d1d1d 100%);
+  background: -webkit-radial-gradient(center, ellipse cover, #45484d 0%, #000000 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #424242 0%, #1d1d1d 100%);
+  background: radial-gradient(ellipse at center, #45484d 0%, #000000 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
-  body .header, body a .movie-title, body .search-div button {
+  body .header, body a .movie-title, body .search-div .form-control, body .search-div button {
     font-family: "Open Sans Condensed", sans-serif;
     font-weight: 700;
     text-transform: uppercase; }
@@ -30,27 +30,54 @@ body {
   body .col-centered {
     float: none;
     margin: 0 auto; }
-    body .col-centered ul {
-      -webkit-padding-start: 0px !important; }
   body .search-div {
     padding: 100px 0px; }
-    body .search-div input {
-      font-family: "Yantramanav", sans-serif;
-      max-width: 800px;
-      margin: 0 auto; }
+    body .search-div h2 {
+      margin-bottom: 50px;
+      font-size: 6em; }
+    body .search-div .search-input {
+      max-width: 600px;
+      margin: 0 auto;
+      background: none;
+      border-bottom: solid 2px white;
+      transition: border 0.3s; }
+    body .search-div input[type="text"] {
+      color: white; }
+      body .search-div input[type="text"]:focus {
+        border-bottom: solid 2px white; }
+    body .search-div .form-control {
+      border-radius: 0;
+      /* WebKit, Blink, Edge */
+      /* Mozilla Firefox 4 to 18 */
+      /* Mozilla Firefox 19+ */
+      /* Internet Explorer 10-11 */
+      /* Microsoft Edge */ }
+      body .search-div .form-control:focus {
+        border: none; }
+      body .search-div .form-control::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, 0.5); }
+      body .search-div .form-control:-moz-placeholder {
+        color: rgba(255, 255, 255, 0.5); }
+      body .search-div .form-control::-moz-placeholder {
+        color: rgba(255, 255, 255, 0.5); }
+      body .search-div .form-control:-ms-input-placeholder {
+        color: rgba(255, 255, 255, 0.5); }
+      body .search-div .form-control::-ms-input-placeholder {
+        color: rgba(255, 255, 255, 0.5); }
     body .search-div button {
-      color: #b76b00; }
+      color: white; }
+      body .search-div button:hover {
+        color: #b76b00; }
   body .list {
     padding-top: 40px;
     padding-bottom: 100px; }
+    body .list ul {
+      width: 100%;
+      padding: 0px 0px; }
   body .popular-link {
     padding-right: 5%; }
   body .card {
     background: none;
-    border: none;
-    padding-top: 10px;
-    max-width: 200px; }
-    body .card img {
-      height: 255px; }
+    border: none; }
   body .movie-detail-img {
     padding-right: 30px; }
