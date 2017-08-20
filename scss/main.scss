@@ -69,6 +69,9 @@ body {
       margin: 0 auto;
       background: none;
       border-bottom: solid 2px white;
+      border-top: none;
+      border-right: none;
+      border-left: none;
       transition: border 0.3s;
     }
     input[type="text"] {
@@ -99,30 +102,35 @@ body {
       }
     }
   }
-
-  // Provide breathing space around list of results
-  .list {
-    padding-top: 40px;
-    padding-bottom: 100px;
-    ul {
-      width: 100%;
-      padding: 0px 0px;
+  .card-deck {
+    .card {
+      margin: 0 !important;
+      width: 200px;
+      height: 300px;
+      background: none;
+      border: none;
+      padding-right: 50px;
     }
   }
 
-  .popular-link {
-    padding-right: 5%;
+  .card-img-top {
+    height: 200px;
+    width: 150px;
   }
 
-  .card {
-    background: none;
-    border: none;
-  }
+  // .popular-link {
+  //   padding-right: 5%;
+  // }
 
   // Modal Styles
+  .modal-lg {
+    padding-top: 300px;
+  }
+
   .movie-detail-img {
     padding-right: 30px;
   }
+
 }
 
 

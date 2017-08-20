@@ -42,6 +42,9 @@ body {
       margin: 0 auto;
       background: none;
       border-bottom: solid 2px white;
+      border-top: none;
+      border-right: none;
+      border-left: none;
       transition: border 0.3s; }
     body .search-div input[type="text"] {
       color: white; }
@@ -70,17 +73,18 @@ body {
       color: white; }
       body .search-div button:hover {
         color: #b76b00; }
-  body .list {
-    padding-top: 40px;
-    padding-bottom: 100px; }
-    body .list ul {
-      width: 100%;
-      padding: 0px 0px; }
-  body .popular-link {
-    padding-right: 5%; }
-  body .card {
+  body .card-deck .card {
+    margin: 0 !important;
+    width: 200px;
+    height: 300px;
     background: none;
-    border: none; }
+    border: none;
+    padding-right: 50px; }
+  body .card-img-top {
+    height: 200px;
+    width: 150px; }
+  body .modal-lg {
+    padding-top: 300px; }
   body .movie-detail-img {
     padding-right: 30px; }
 

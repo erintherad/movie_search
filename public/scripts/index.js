@@ -126,10 +126,10 @@ $(document).ready(function() {
     var results = object.results;
     $.each(results, function(key, value) {
       var image = checkForMissingImage(value.poster_path);
-      var result = "<li class='card' id='" + value.id + "''>" +
-                   "<div class='card-block'><a href='#' data-toggle='modal' data-target='#detailModal'>" +
+      var result = "<div class='card' id='" + value.id + "''>" +
+                   "<a href='#' data-toggle='modal' data-target='#detailModal'>" +
                    "<img src='" + image + "' class='card-img-top'>" +
-                   "<h4 class='card-title movie-title'>" + value.title + "</h4></a></li></div>";
+                   "<divclass='card-block'><h4 class='card-title movie-title'>" + value.title + "</h4></div></a></div>";
       listElement.append(result);
     });
   }
