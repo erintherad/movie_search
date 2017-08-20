@@ -4,15 +4,15 @@ $header: 'Open Sans Condensed', sans-serif;
 $body: 'Yantramanav', sans-serif;
 $orange: #EC971F;
 $dark-orange: #b76b00;
+$teal: #50E3C2;
 
 body {
   // Sets background color on page
   margin: 0;
-  background: #45484d; /* Old browsers */
-  background: -moz-radial-gradient(center, ellipse cover, #45484d 0%, #000000 100%); /* FF3.6-15 */
-  background: -webkit-radial-gradient(center, ellipse cover, #45484d 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
-  background: radial-gradient(ellipse at center, #45484d 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-
+  background: rgb(160,160,160); /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover, rgba(160,160,160,1) 0%, rgba(14,14,14,1) 62%, rgba(14,14,14,1) 83%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover, rgba(160,160,160,1) 0%,rgba(14,14,14,1) 62%,rgba(14,14,14,1) 83%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center, rgba(160,160,160,1) 0%,rgba(14,14,14,1) 62%,rgba(14,14,14,1) 83%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   // Sets font styles on headers
   .header {
     font-family: $header;
@@ -76,6 +76,7 @@ body {
     }
     input[type="text"] {
       color: white;
+      font-size: 2em;
       &:focus {
         border-bottom: solid 2px white;
       }
@@ -94,9 +95,10 @@ body {
       &::-ms-input-placeholder { color: rgba(255, 255, 255, 0.5); }  /* Microsoft Edge */
     }
 
-    button {
+    .orangeBtn {
       @extend .header;
       color: white;
+      background-color: $orange;
       &:hover {
         color: $dark-orange;
       }
@@ -118,19 +120,38 @@ body {
     width: 150px;
   }
 
-  // .popular-link {
-  //   padding-right: 5%;
-  // }
-
   // Modal Styles
   .modal-lg {
     padding-top: 300px;
+    color: white;
+    font-family: $body;
+    .modal-content {
+      background: rgba(15,15,15, 0.85);
+    }
+    .movie-detail-img {
+      padding-right: 30px;
+      padding-bottom: 10px;
+    }
+    .tagline {
+      font-style: italic;
+      font-size: 2em;
+      color: $teal;
+    }
+    .close {
+      font-size: 2em;
+      color: $teal;
+      text-shadow: none;
+      opacity: 1;
+    }
+    .orangeBtn {
+      @extend .header;
+      color: white;
+      background-color: $orange;
+      &:hover {
+        color: $dark-orange;
+      }
+    }
   }
-
-  .movie-detail-img {
-    padding-right: 30px;
-  }
-
 }
 
 

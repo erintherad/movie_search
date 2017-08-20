@@ -83,10 +83,14 @@ $(document).ready(function() {
   // Function that builds movie details
   function generateMovieDetails(data) {
     var dateArr = data.release_date.split('-');
-    var dateStr = "Released on " + getMonthName(dateArr[1]) + " " + dateArr[2] + ", " + dateArr[0];
+    var dateStr = getMonthName(dateArr[1]) + " " + dateArr[2] + ", " + dateArr[0];
     var image = checkForMissingImage(data.poster_path);
-    var title = "<h2>" + data.title + "</h2>";
+    var title = "<h2 class='header'>" + data.title + "</h2>";
     var description = "<img class='float-left movie-detail-img' src='" + image + "'>" +
+                      "<h4 class='header tagline'>" + data.tagline + "</h4>" +
+                      "<p>" + data.overview + "</p>" +
+                      "<p><span class='fa fa-clock-o'></span> " + data.runtime +
+                      " minutes | <span class='fa fa-calendar-check-o'></span> " + dateStr + "</p>" +
                       "<select id='rating'>" +
                         "<option value='1'>1</option>" +
                         "<option value='2'>2</option>" +
@@ -98,12 +102,10 @@ $(document).ready(function() {
                         "<option value='8'>3</option>" +
                         "<option value='9'>4</option>" +
                         "<option value='10'>5</option>" +
-                      "</select>" +
-                      "<p>" + data.overview + "</p>" +
-                      "<p>" + dateStr + "</p>";
+                      "</select>";
     $('#movieTitle').append(title);
     $('#movieDetail').append(description);
-    showStars(7);
+    showStars(Math.round(data.vote_average));
   }
 
   // Function that checks for missing images and replaces with a placeholder
@@ -137,7 +139,7 @@ $(document).ready(function() {
 function showStars(rating) {
   $('#rating').barrating({
       theme: 'fontawesome-stars-o',
-      readOnly: true,
+      readonly: true,
       initialRating: rating,
       hoverState: false
     });
