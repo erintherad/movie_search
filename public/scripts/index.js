@@ -87,10 +87,23 @@ $(document).ready(function() {
     var image = checkForMissingImage(data.poster_path);
     var title = "<h2>" + data.title + "</h2>";
     var description = "<img class='float-left movie-detail-img' src='" + image + "'>" +
+                      "<select id='rating'>" +
+                        "<option value='1'>1</option>" +
+                        "<option value='2'>2</option>" +
+                        "<option value='3'>3</option>" +
+                        "<option value='4'>4</option>" +
+                        "<option value='5'>5</option>" +
+                        "<option value='6'>1</option>" +
+                        "<option value='7'>2</option>" +
+                        "<option value='8'>3</option>" +
+                        "<option value='9'>4</option>" +
+                        "<option value='10'>5</option>" +
+                      "</select>" +
                       "<p>" + data.overview + "</p>" +
                       "<p>" + dateStr + "</p>";
     $('#movieTitle').append(title);
     $('#movieDetail').append(description);
+    showStars(7);
   }
 
   // Function that checks for missing images and replaces with a placeholder
@@ -120,4 +133,13 @@ $(document).ready(function() {
       listElement.append(result);
     });
   }
-})
+
+function showStars(rating) {
+  $('#rating').barrating({
+      theme: 'fontawesome-stars-o',
+      readOnly: true,
+      initialRating: rating,
+      hoverState: false
+    });
+  }
+});
