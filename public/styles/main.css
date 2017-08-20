@@ -75,6 +75,8 @@ body {
       background-color: #EC971F; }
       body .search-div .orangeBtn:hover {
         color: #b76b00; }
+  body .result-header {
+    padding-bottom: 50px; }
   body .card-deck .card {
     margin: 0 !important;
     width: 200px;
