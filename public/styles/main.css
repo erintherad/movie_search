@@ -13,6 +13,8 @@ body {
     font-family: "Open Sans Condensed", sans-serif;
     font-weight: 700;
     text-transform: uppercase; }
+  body #loading {
+    width: 60px; }
   body h2 {
     color: #EC971F; }
   body a .movie-title {
