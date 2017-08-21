@@ -4,7 +4,7 @@ const app = express();
 // Allows app to use external js files
 app.use(express.static('public'));
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 
 // root route (serves index.html)
 app.get('/', function(req, res) {
