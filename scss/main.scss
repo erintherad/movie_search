@@ -3,6 +3,8 @@
 $header: 'Open Sans Condensed', sans-serif;
 $body: 'Yantramanav', sans-serif;
 $orange: #EC971F;
+$light-orange: #ffe2ba;
+$header-orange: #fc9300;
 $teal: #50E3C2;
 $dark-teal: #50e3c2;
 
@@ -10,14 +12,23 @@ body {
   // Sets background color on page
   margin: 0;
   background: rgb(160,160,160); /* Old browsers */
-background: -moz-radial-gradient(center, ellipse cover, rgba(160,160,160,1) 0%, rgba(14,14,14,1) 62%, rgba(14,14,14,1) 83%); /* FF3.6-15 */
-background: -webkit-radial-gradient(center, ellipse cover, rgba(160,160,160,1) 0%,rgba(14,14,14,1) 62%,rgba(14,14,14,1) 83%); /* Chrome10-25,Safari5.1-6 */
-background: radial-gradient(ellipse at center, rgba(160,160,160,1) 0%,rgba(14,14,14,1) 62%,rgba(14,14,14,1) 83%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -moz-radial-gradient(center, ellipse cover, rgba(160,160,160,1) 0%, rgba(14,14,14,1) 62%, rgba(14,14,14,1) 83%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(160,160,160,1) 0%,rgba(14,14,14,1) 62%,rgba(14,14,14,1) 83%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, rgba(160,160,160,1) 0%,rgba(14,14,14,1) 62%,rgba(14,14,14,1) 83%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
   // Sets font styles on headers
   .header {
     font-family: $header;
     font-weight: 700;
     text-transform: uppercase;
+  }
+
+  #title-header {
+    @extend .header;
+    background: -webkit-linear-gradient($light-orange, $header-orange);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.1);
   }
 
   #loading {

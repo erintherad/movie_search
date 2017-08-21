@@ -9,10 +9,15 @@ body {
   /* Chrome10-25,Safari5.1-6 */
   background: radial-gradient(ellipse at center, #a0a0a0 0%, #0e0e0e 62%, #0e0e0e 83%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
-  body .header, body a .movie-title, body .search-div .form-control, body .search-div .orangeBtn, body .modal-lg .orangeBtn {
+  body .header, body #title-header, body a .movie-title, body .search-div .form-control, body .search-div .orangeBtn, body .modal-lg .orangeBtn {
     font-family: "Open Sans Condensed", sans-serif;
     font-weight: 700;
     text-transform: uppercase; }
+  body #title-header {
+    background: -webkit-linear-gradient(#ffe2ba, #fc9300);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.1); }
   body #loading {
     width: 60px; }
   body h2 {
