@@ -19,6 +19,7 @@ $(document).ready(function() {
   loading.hide();
 
 // *** EVENT LISTENERS *** //
+
   // Submit event to show search results
   $('#searchButton').click(function(e) {
     popularDiv.hide();
@@ -58,7 +59,7 @@ $(document).ready(function() {
         console.log(e.message);
       }
     });
-});
+  });
 
 
 // *** HELPER FUNCTIONS *** //
@@ -135,12 +136,13 @@ $(document).ready(function() {
     });
   }
 
-function showStars(rating) {
-  $('#rating').barrating({
-      theme: 'fontawesome-stars-o',
-      readonly: true,
-      initialRating: rating,
-      hoverState: false
+  // Sets up star rating for movie detail
+  function showStars(rating) {
+    $('#rating').barrating({
+        theme: 'fontawesome-stars-o',
+        readonly: true,
+        initialRating: rating,
+        hoverState: false
     });
   }
 });
