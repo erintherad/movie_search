@@ -15,7 +15,7 @@
       <div class="row">
         <div class="col-md-8 col-centered text-center search-div">
           <h2 class="header">Search for a movie</h2>
-          <input type="text" id="movie" class="form-control search-input text-center" placeholder="Star Wars, The Birds, Jurassic Park...">
+          <input type="text" id="movie" class="form-control search-input text-center" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Star Wars, The Birds, Jurassic Park...'" placeholder="Star Wars, The Birds, Jurassic Park...">
           <br>
           <button id="searchButton" class="btn orangeBtn">Search</button>
         </div>
@@ -35,7 +35,7 @@
         <div class="col-md-10 list col-centered" id="searchDiv">
           <div class="clearfix">
             <h2 class="header float-left result-header">Results for <span id="searchTerm"></span></h2>
-            <p class="float-right popular-link"><a href=".">Back to popular titles</a></p>
+            <p class="float-right popular-link"><a href="."><span class="fa fa-refresh"></span></a></p>
           </div>
           <div class="card-deck text-center" id="search-results"></div>
         </div>

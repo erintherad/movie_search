@@ -47,7 +47,7 @@ body {
       border-left: none;
       transition: border 0.3s; }
     body .search-div input[type="text"] {
-      color: white;
+      color: #50E3C2;
       font-size: 2em; }
       body .search-div input[type="text"]:focus {
         border-bottom: solid 2px white; }
@@ -61,22 +61,33 @@ body {
       body .search-div .form-control:focus {
         border: none; }
       body .search-div .form-control::-webkit-input-placeholder {
-        color: rgba(255, 255, 255, 0.5); }
+        color: #50e3c2; }
       body .search-div .form-control:-moz-placeholder {
-        color: rgba(255, 255, 255, 0.5); }
+        color: #50e3c2; }
       body .search-div .form-control::-moz-placeholder {
-        color: rgba(255, 255, 255, 0.5); }
+        color: #50e3c2; }
       body .search-div .form-control:-ms-input-placeholder {
-        color: rgba(255, 255, 255, 0.5); }
+        color: #50e3c2; }
       body .search-div .form-control::-ms-input-placeholder {
-        color: rgba(255, 255, 255, 0.5); }
+        color: #50e3c2; }
     body .search-div .orangeBtn {
       color: white;
       background-color: #EC971F; }
       body .search-div .orangeBtn:hover {
-        color: #b76b00; }
+        background-color: #50E3C2; }
   body .result-header {
     padding-bottom: 50px; }
+  body .popular-link {
+    padding-right: 50px;
+    text-decoration: none;
+    font-size: 2em; }
+    body .popular-link a {
+      color: #EC971F; }
+      body .popular-link a:hover {
+        color: #50E3C2; }
+      body .popular-link a:hover, body .popular-link a:focus, body .popular-link a:visited {
+        text-decoration: none !important;
+        outline: none; }
   body .card-deck .card {
     margin: 0 !important;
     width: 200px;
@@ -102,14 +113,14 @@ body {
       color: #50E3C2; }
     body .modal-lg .close {
       font-size: 2em;
-      color: #50E3C2;
+      color: #EC971F;
       text-shadow: none;
       opacity: 1; }
     body .modal-lg .orangeBtn {
       color: white;
       background-color: #EC971F; }
       body .modal-lg .orangeBtn:hover {
-        color: #b76b00; }
+        background-color: #50E3C2; }
 
 .br-theme-fontawesome-stars-o .br-widget {
   height: 28px;

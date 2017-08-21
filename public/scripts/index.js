@@ -19,7 +19,6 @@ $(document).ready(function() {
   loading.hide();
 
 // *** EVENT LISTENERS *** //
-
   // Submit event to show search results
   $('#searchButton').click(function(e) {
     popularDiv.hide();

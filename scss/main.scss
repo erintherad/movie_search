@@ -3,8 +3,8 @@
 $header: 'Open Sans Condensed', sans-serif;
 $body: 'Yantramanav', sans-serif;
 $orange: #EC971F;
-$dark-orange: #b76b00;
 $teal: #50E3C2;
+$dark-teal: #50e3c2;
 
 body {
   // Sets background color on page
@@ -75,7 +75,7 @@ background: radial-gradient(ellipse at center, rgba(160,160,160,1) 0%,rgba(14,14
       transition: border 0.3s;
     }
     input[type="text"] {
-      color: white;
+      color: $teal;
       font-size: 2em;
       &:focus {
         border-bottom: solid 2px white;
@@ -88,11 +88,11 @@ background: radial-gradient(ellipse at center, rgba(160,160,160,1) 0%,rgba(14,14
       &:focus {
         border: none;
       }
-      &::-webkit-input-placeholder { color: rgba(255, 255, 255, 0.5); }  /* WebKit, Blink, Edge */
-      &:-moz-placeholder { color: rgba(255, 255, 255, 0.5); }  /* Mozilla Firefox 4 to 18 */
-      &::-moz-placeholder { color: rgba(255, 255, 255, 0.5); }  /* Mozilla Firefox 19+ */
-      &:-ms-input-placeholder { color: rgba(255, 255, 255, 0.5); }  /* Internet Explorer 10-11 */
-      &::-ms-input-placeholder { color: rgba(255, 255, 255, 0.5); }  /* Microsoft Edge */
+      &::-webkit-input-placeholder { color: $dark-teal; }  /* WebKit, Blink, Edge */
+      &:-moz-placeholder { color: $dark-teal; }  /* Mozilla Firefox 4 to 18 */
+      &::-moz-placeholder { color: $dark-teal; }  /* Mozilla Firefox 19+ */
+      &:-ms-input-placeholder { color: $dark-teal; }  /* Internet Explorer 10-11 */
+      &::-ms-input-placeholder { color: $dark-teal; }  /* Microsoft Edge */
     }
 
     .orangeBtn {
@@ -100,7 +100,7 @@ background: radial-gradient(ellipse at center, rgba(160,160,160,1) 0%,rgba(14,14
       color: white;
       background-color: $orange;
       &:hover {
-        color: $dark-orange;
+        background-color: $teal;
       }
     }
   }
@@ -108,6 +108,22 @@ background: radial-gradient(ellipse at center, rgba(160,160,160,1) 0%,rgba(14,14
   /// Result Styles ////
   .result-header {
     padding-bottom: 50px;
+  }
+
+  .popular-link {
+    padding-right: 50px;
+    text-decoration: none;
+    font-size: 2em;
+    a {
+      color: $orange;
+      &:hover {
+        color: $teal;
+      }
+      &:hover, &:focus, &:visited {
+        text-decoration: none !important;
+        outline: none;
+      }
+    }
   }
 
   .card-deck {
@@ -145,7 +161,7 @@ background: radial-gradient(ellipse at center, rgba(160,160,160,1) 0%,rgba(14,14
     }
     .close {
       font-size: 2em;
-      color: $teal;
+      color: $orange;
       text-shadow: none;
       opacity: 1;
     }
@@ -154,7 +170,7 @@ background: radial-gradient(ellipse at center, rgba(160,160,160,1) 0%,rgba(14,14
       color: white;
       background-color: $orange;
       &:hover {
-        color: $dark-orange;
+        background-color: $teal;
       }
     }
   }
