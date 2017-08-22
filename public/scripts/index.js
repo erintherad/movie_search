@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var config = {
     searchUrl: 'https://api.themoviedb.org/3/search/movie?query=',
-    popularUrl: 'https://api.themoviedb.org/3/movie/popular?api_key=5b19221d20b929615d236692cea743e4&language=en-US&page=1',
+    popularUrl: 'https://api.themoviedb.org/3/movie/popular?api_key=5b19221d20b929615d236692cea743e4&language=en-US&page=',
     imageUrl: 'https://image.tmdb.org/t/p/w185',
     movieUrl: 'https://api.themoviedb.org/3/movie/',
     apiKey: 'api_key=5b19221d20b929615d236692cea743e4&language=en-US&page=1'
@@ -10,7 +10,9 @@ $(document).ready(function() {
   var searchDiv = $('#searchDiv'),
       popularDiv = $('#popularDiv'),
       loading = $('#loading'),
+      count = 1,
       movieInput,
+      url,
       movieName;
 
   // Sets page with correct show/hide logic
@@ -36,6 +38,7 @@ $(document).ready(function() {
         generateListResults(data, $('#search-results'));
         searchDiv.show();
         loading.hide();
+        enableLazyLoad('search_input', movieInput);
       },
       error: function(e) {
         console.log(e.message);
@@ -61,14 +64,41 @@ $(document).ready(function() {
     });
   });
 
-
 // *** HELPER FUNCTIONS *** //
+
+  // Set up for lazy load on $('#popular-results')
+  function enableLazyLoad(url, movieInput) {
+    if(url === 'search_input') {
+      url = config.searchUrl + movieInput + '&' + config.apiKey
+    }
+    $(window).scroll(function() {
+      if($(window).scrollTop() + $(window).height() == $(document).height()) {
+        count++;
+        $.ajax({
+          type: 'GET',
+          url: url + count,
+          contentType: 'application/json',
+          dataType: 'jsonp',
+          success: function(data) {
+            if(url === config.popularUrl) {
+              generateListResults(data, $('#popular-results'));
+            } else if(url === 'search_input') {
+              generateListResults(data, $('#search-results'));
+            }
+          },
+          error: function(e) {
+            console.log(e.message);
+          }
+        });
+      }
+    });
+  }
 
   // A function that GETs 20 of the most popular movies
   function getPopular() {
     $.ajax({
       type: 'GET',
-      url: config.popularUrl,
+      url: config.popularUrl + 1,
       contentType: 'application/json',
       dataType: 'jsonp',
       success: function(data) {
@@ -78,6 +108,7 @@ $(document).ready(function() {
         console.log(e.message);
       }
     });
+    enableLazyLoad(config.popularUrl, $('#popular-results'));
   }
 
   // Function that builds movie details
